@@ -15,11 +15,9 @@ async function chatWithAI() {
         return;
     }
 
-    // SHOW USER MESSAGE
+    // USER MESSAGE
     responseBox.innerHTML += `
-
         <div style="margin-top:15px; text-align:right;">
-
             <p style="
                 background:#0d6efd;
                 color:white;
@@ -29,7 +27,6 @@ async function chatWithAI() {
             ">
                 <strong>You:</strong> ${input}
             </p>
-
         </div>
     `;
 
@@ -38,7 +35,6 @@ async function chatWithAI() {
     try {
 
         const response = await fetch("/ai", {
-
             method: "POST",
 
             headers: {
@@ -48,15 +44,12 @@ async function chatWithAI() {
             body: JSON.stringify({
                 message: input
             })
-
         });
 
         const data = await response.json();
 
         responseBox.innerHTML += `
-
             <div style="margin-top:15px; text-align:left;">
-
                 <p style="
                     background:#f1f1f1;
                     padding:10px;
@@ -65,7 +58,6 @@ async function chatWithAI() {
                 ">
                     <strong>AI:</strong> ${data.reply}
                 </p>
-
             </div>
         `;
 
@@ -74,14 +66,11 @@ async function chatWithAI() {
         console.log(error);
 
         responseBox.innerHTML += `
-
             <div style="margin-top:15px; color:red;">
-
                 <p>
                     <strong>Error:</strong>
                     Unable to connect to AI backend
                 </p>
-
             </div>
         `;
     }
