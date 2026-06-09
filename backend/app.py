@@ -2,7 +2,6 @@
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 from router.ai import ai_bp
-import os
 
 app = Flask(
     __name__,
@@ -20,7 +19,7 @@ app.register_blueprint(ai_bp)
 def home():
     return send_from_directory(app.static_folder, "index.html")
 
-# SERVE HTML/CSS/JS FILES
+# SERVE FRONTEND FILES
 @app.route("/<path:path>")
 def serve_files(path):
     return send_from_directory(app.static_folder, path)
