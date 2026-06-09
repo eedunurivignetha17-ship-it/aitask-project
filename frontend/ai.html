@@ -5,6 +5,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>TASKAI - AI Assistant</title>
@@ -105,12 +106,12 @@
         .chat-header{
             background:#0d6efd;
             color:white;
-            padding:25px;
+            padding:20px;
             text-align:center;
         }
 
         .chat-header h1{
-            font-size:32px;
+            font-size:30px;
         }
 
         .chat-header p{
@@ -130,8 +131,6 @@
             gap:15px;
         }
 
-        /* USER MESSAGE */
-
         .user-message{
             align-self:flex-end;
             background:#0d6efd;
@@ -141,8 +140,6 @@
             max-width:75%;
             line-height:1.5;
         }
-
-        /* AI MESSAGE */
 
         .ai-message{
             align-self:flex-start;
@@ -201,7 +198,8 @@
 
             .chat-container{
                 width:95%;
-                margin-top:120px;
+                margin-top:130px;
+                height:85vh;
             }
 
             .nav-links{
@@ -260,6 +258,8 @@
 
         </div>
 
+        <!-- CHAT BOX -->
+
         <div id="chatBox">
 
             <div class="ai-message">
@@ -269,6 +269,8 @@
             </div>
 
         </div>
+
+        <!-- INPUT AREA -->
 
         <div class="input-area">
 
@@ -329,7 +331,7 @@
 
                 const data = await response.json();
 
-                // AI MESSAGE
+                // AI RESPONSE
 
                 const aiDiv = document.createElement("div");
 

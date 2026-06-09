@@ -1,7 +1,7 @@
 
 from flask import Flask, send_from_directory
 from flask_cors import CORS
-from router.ai import ai_bp
+from backend.router.ai import ai_bp
 
 app = Flask(
     __name__,
