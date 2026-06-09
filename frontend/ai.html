@@ -303,17 +303,74 @@
 
     </div>
 
-    <script>
+<script>
 
-        async function sendMessage() {
+async function sendMessage() {
 
-            const input = document.getElementById("userInput");
+    const input = document.getElementById("userInput");
 
-            const message = input.value.trim();
+    const message = input.value.trim();
 
-            if(message === "") return;
+    if (message === "") return;
 
-            const chatBox = document.getElementById("chatBox");
+    const chatBox = document.getElementById("chatBox");
+
+    // USER MESSAGE
+    chatBox.innerHTML += `
+        <div class="user-message">
+            <b>You:</b> ${message}
+        </div>
+    `;
+
+    input.value = "";
+
+    try {
+
+        const response = await fetch("/ai", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                message: message
+            })
+
+        });
+
+        const data = await response.json();
+
+        chatBox.innerHTML += `
+            <div class="ai-message">
+                <b>AI:</b> ${data.reply}
+            </div>
+        `;
+
+    } catch (error) {
+
+        console.log(error);
+
+        chatBox.innerHTML += `
+            <div class="ai-message" style="color:red;">
+                <b>Error:</b> Backend connection failed
+            </div>
+        `;
+    }
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function handleKeyPress(event) {
+
+    if (event.key === "Enter") {
+
+        sendMessage();
+    }
+}
+
+</script>
 
             // User Message
 
