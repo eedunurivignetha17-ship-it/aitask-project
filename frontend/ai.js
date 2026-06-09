@@ -2,6 +2,7 @@
 // ======================================
 // AI TASK SUGGESTIONS
 // ======================================
+
 function generateSuggestions() {
 
     const input = document.getElementById(
@@ -16,9 +17,7 @@ function generateSuggestions() {
 
     if (input === "") {
 
-        alert(
-            "Please enter a task"
-        );
+        alert("Please enter a task");
 
         return;
     }
@@ -56,6 +55,7 @@ function generateSuggestions() {
 // ======================================
 // CHATBOT BUTTON
 // ======================================
+
 document.getElementById(
     "send-btn"
 ).addEventListener(
@@ -66,7 +66,8 @@ document.getElementById(
 // ======================================
 // AI CHATBOT
 // ======================================
-function chatWithAI() {
+
+async function chatWithAI() {
 
     const inputField = document.getElementById(
         "chat-input"
@@ -87,37 +88,7 @@ function chatWithAI() {
         return;
     }
 
-    let response = "";
-
-    // AI RESPONSES
-    if (
-        input.toLowerCase().includes("stress")
-    ) {
-
-        response =
-            "🌿 Take a short break and relax.";
-
-    } else if (
-        input.toLowerCase().includes("sad")
-    ) {
-
-        response =
-            "💙 Better days are coming.";
-
-    } else if (
-        input.toLowerCase().includes("study")
-    ) {
-
-        response =
-            "📚 Study step by step consistently.";
-
-    } else {
-
-        response =
-            "🚀 Keep working towards your goals.";
-    }
-
-    // SHOW CHAT
+    // SHOW USER MESSAGE
     responseBox.innerHTML += `
 
         <div style="margin-top:20px;">
@@ -127,15 +98,58 @@ function chatWithAI() {
                 ${input}
             </p>
 
-            <p>
+            <p id="loading-text">
                 <strong>AI:</strong>
-                ${response}
+                Thinking...
             </p>
 
             <hr>
 
         </div>
     `;
+
+    try {
+const response = await fetch(
+    "/ai",
+    {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            message: input
+        })
+    }
+);
+
+        const data = await response.json();
+
+        // REMOVE LOADING TEXT
+        const loadingText = document.getElementById(
+            "loading-text"
+        );
+
+        if (loadingText) {
+
+            loadingText.innerHTML = `
+                <strong>AI:</strong>
+                ${data.reply || "No response from AI"}
+            `;
+        }
+
+    } catch (error) {
+
+        responseBox.innerHTML += `
+
+            <p style="color:red;">
+
+                Error: Unable to connect to AI backend
+
+            </p>
+        `;
+    }
 
     // CLEAR INPUT
     inputField.value = "";
