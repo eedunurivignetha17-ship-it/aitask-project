@@ -11,15 +11,12 @@ app = Flask(
 
 CORS(app)
 
-# REGISTER AI ROUTE
 app.register_blueprint(ai_bp)
 
-# HOME PAGE
 @app.route("/")
 def home():
     return send_from_directory(app.static_folder, "index.html")
 
-# SERVE FRONTEND FILES
 @app.route("/<path:path>")
 def serve_files(path):
     return send_from_directory(app.static_folder, path)
