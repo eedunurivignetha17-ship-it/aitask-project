@@ -1,26 +1,22 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_cors import CORS
-from router.ai import ai_bp
+import os
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="../frontend",
+    static_url_path=""
+)
 
-# Enable CORS for frontend connection
 CORS(app)
 
-# Register AI routes
-app.register_blueprint(ai_bp)
-
-# Home Route
 @app.route("/")
 def home():
-    return {
-        "message": "TASKAI Backend Running Successfully"
-    }
+    return send_from_directory(app.static_folder, "index.html")
 
-# Run Server
+@app.route("/<path:path>")
+def serve_files(path):
+    return send_from_directory(app.static_folder, path)
+
 if __name__ == "__main__":
-    app.run(
-        debug=True,
-        host="0.0.0.0",
-        port=5000
-    )
+    app.run(debug=True)
