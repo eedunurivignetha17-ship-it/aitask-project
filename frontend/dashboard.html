@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TASKAI Dashboard</title>
+
+    <!-- CSS -->
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <div class="sidebar">
+
+        <!-- LOGO -->
+        <h2 class="logo">
+            TASKAI
+        </h2>
+
+        <!-- NAVIGATION -->
+        ```html id="x5m2qp"
+<nav>
+
+    <!-- DASHBOARD -->
+    <a href="dashboard.html">
+        🏠 Dashboard
+    </a>
+
+    <!-- AI ASSISTANT -->
+    <a href="ai.html">
+        🤖 AI Assistant
+    </a>
+
+    <!-- WELLNESS -->
+    <a href="wellness.html">
+        🌿 Wellness Tips
+    </a>
+
+    <!-- AI SCHEDULE -->
+    <a href="planner.html">
+        📅 AI Planner
+    </a>
+
+</nav>
+
+
+    </div>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <div class="main-content">
+
+        <!-- HEADER -->
+        <header>
+
+            <h1>
+                TASKAI Dashboard
+            </h1>
+
+            <button id="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </header>
+
+        <!-- =========================
+             TASK COUNTERS
+        ========================== -->
+        <div class="stats-container">
+
+            <div class="stat-card">
+
+                <h2 id="total-tasks">
+                    0
+                </h2>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="completed-tasks">
+                    0
+                </h2>
+
+                <p>Completed</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2 id="pending-tasks">
+                    0
+                </h2>
+
+                <p>Pending</p>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             TASK FORM
+        ========================== -->
+        <div class="task-form">
+
+            <!-- TITLE -->
+            <input
+                type="text"
+                id="title"
+                placeholder="Enter Task Title"
+            >
+
+            <!-- DESCRIPTION -->
+            <textarea
+                id="description"
+                placeholder="Enter Task Description"
+            ></textarea>
+
+            <!-- PRIORITY -->
+            <select id="priority">
+
+                <option value="High">
+                    High
+                </option>
+
+                <option
+                    value="Medium"
+                    selected
+                >
+                    Medium
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+            </select>
+
+            <!-- DUE DATE -->
+            <input
+                type="date"
+                id="due-date"
+            >
+
+            <!-- BUTTON -->
+            <button onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+        <!-- =========================
+             TASK LIST
+        ========================== -->
+        <div
+            id="task-list"
+            class="task-list"
+        >
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         REMINDER SOUND
+    ========================== -->
+    <audio
+        id="reminder-sound"
+        src="sounds/notification.mp3"
+    ></audio>
+
+    <!-- JAVASCRIPT -->
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
+```

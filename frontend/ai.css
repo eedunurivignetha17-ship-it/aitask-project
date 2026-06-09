@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+
+.chat-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* =========================
+   CHAT BOX
+========================= */
+
+.chat-box {
+    height: 500px;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f9f9f9;
+}
+
+/* =========================
+   USER MESSAGE
+========================= */
+
+.user-message {
+    background: #0d6efd;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 70%;
+    margin-left: auto;
+}
+
+/* =========================
+   AI MESSAGE
+========================= */
+
+.ai-message {
+    background: #e9ecef;
+    color: black;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 70%;
+}
+
+/* =========================
+   INPUT AREA
+========================= */
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-area button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    border: none;
+    background: #0d6efd;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #0b5ed7;
+}
+
+/* =========================
+   CHATBOT SECTION
+========================= */
+
+.chatbot-container {
+
+    margin-top: 40px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.chatbot-container input {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+}

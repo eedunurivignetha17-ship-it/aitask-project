@@ -1,0 +1,326 @@
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 250px;
+
+    height: 100vh;
+
+    background: #0d6efd;
+
+    position: fixed;
+
+    left: 0;
+
+    top: 0;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.logo {
+
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.sidebar nav a {
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+
+    background: rgba(255,255,255,0.2);
+}
+
+/* MAIN CONTENT SHIFT */
+
+.main-content {
+
+    margin-left: 250px;
+
+    padding: 20px;
+}
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #0d6efd;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* =========================
+   DARK MODE BUTTON
+========================= */
+
+#theme-toggle {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+/* =========================
+   TASK COUNTERS
+========================= */
+
+.stats-container {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.stat-card h2 {
+    margin: 0;
+    color: #0d6efd;
+    font-size: 32px;
+}
+
+.stat-card p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* =========================
+   TASK FORM
+========================= */
+
+.task-form {
+    width: 100%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.task-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.task-form button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    background: #0d6efd;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-form button:hover {
+    background: #0b5ed7;
+}
+
+/* =========================
+   TASK LIST
+========================= */
+
+.task-list {
+    width: 100%;
+    margin: auto;
+}
+
+/* =========================
+   TASK CARD
+========================= */
+
+.task-card {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.task-card h3 {
+    margin-top: 0;
+}
+
+.task-card p {
+    margin: 10px 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.task-card button {
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.complete-btn {
+    background: green;
+}
+
+.complete-btn:hover {
+    background: darkgreen;
+}
+
+.delete-btn {
+    background: red;
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode header {
+    background: #1e1e1e;
+}
+
+.dark-mode .sidebar {
+    background: #1e1e1e;
+}
+
+.dark-mode .sidebar a:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.dark-mode .task-form,
+.dark-mode .task-card,
+.dark-mode .stat-card {
+    background: #1f1f1f;
+    color: white;
+}
+
+.dark-mode .task-form input,
+.dark-mode .task-form textarea {
+    background: #2b2b2b;
+    color: white;
+    border: 1px solid #555;
+}
+
+.dark-mode .task-list {
+    color: white;
+}
+
+.dark-mode .stat-card h2 {
+    color: #4da3ff;
+}
+
