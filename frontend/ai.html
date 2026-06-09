@@ -280,7 +280,7 @@
 
             <div class="ai-message">
 
-                <b>AI:</b> Hello! How can I help you today?
+            <b>AI:</b> ${data.reply}
 
             </div>
 
@@ -327,7 +327,8 @@
 
             try {
 
-                const response = await fetch("http://127.0.0.1:5000/chat", {
+                const response = await fetch("/ai", 
+                     {
 
                     method: "POST",
 
