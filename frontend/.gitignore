@@ -1,5 +1,5 @@
+
+*.zip
 .env
-*.env
 __pycache__/
-venv/
-.venv/
+instance/
