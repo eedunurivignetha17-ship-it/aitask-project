@@ -9,8 +9,6 @@
 
     <title>TASKAI - AI Assistant</title>
 
-    <!-- Google Font -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +27,6 @@
             font-family:'Poppins',sans-serif;
             background:linear-gradient(135deg,#4f8dfd,#7b5cff);
             min-height:100vh;
-
             display:flex;
             justify-content:center;
             align-items:center;
@@ -45,14 +42,11 @@
             background:#0d6efd;
             color:white;
             padding:15px 40px;
-
             display:flex;
             justify-content:space-between;
             align-items:center;
-
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
-
             z-index:1000;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
         }
 
         .logo-section{
@@ -67,23 +61,19 @@
             border-radius:12px;
             background:white;
             color:#0d6efd;
-
             display:flex;
             justify-content:center;
             align-items:center;
-
             font-size:24px;
             font-weight:bold;
         }
 
         .brand-text h1{
             font-size:24px;
-            margin:0;
         }
 
         .brand-text p{
             font-size:13px;
-            opacity:0.9;
         }
 
         .nav-links{
@@ -92,46 +82,35 @@
         }
 
         .nav-links a{
-            text-decoration:none;
             color:white;
+            text-decoration:none;
             font-weight:500;
-            transition:0.3s;
         }
 
-        .nav-links a:hover{
-            opacity:0.8;
-        }
-
-        /* CHAT CONTAINER */
+        /* CHAT */
 
         .chat-container{
             width:90%;
-            max-width:700px;
+            max-width:750px;
             height:85vh;
-
             background:white;
-
             border-radius:20px;
-
             overflow:hidden;
-
             display:flex;
             flex-direction:column;
-
-            box-shadow:0 10px 30px rgba(0,0,0,0.2);
-
+            box-shadow:0 15px 40px rgba(0,0,0,0.2);
             margin-top:80px;
         }
 
         .chat-header{
             background:#0d6efd;
             color:white;
-            padding:20px;
             text-align:center;
+            padding:25px;
         }
 
         .chat-header h1{
-            font-size:28px;
+            font-size:32px;
         }
 
         .chat-header p{
@@ -140,45 +119,45 @@
 
         #chatBox{
             flex:1;
-            padding:20px;
             overflow-y:auto;
+            padding:20px;
             background:#f5f7fb;
-        }
-
-        .user-message,
-        .ai-message{
-            padding:12px 15px;
-            border-radius:12px;
-            margin-bottom:15px;
-            line-height:1.5;
-            max-width:80%;
-            word-wrap:break-word;
+            display:flex;
+            flex-direction:column;
+            gap:15px;
         }
 
         .user-message{
+            align-self:flex-end;
             background:#0d6efd;
             color:white;
-            margin-left:auto;
+            padding:14px 18px;
+            border-radius:18px 18px 4px 18px;
+            max-width:75%;
         }
 
         .ai-message{
+            align-self:flex-start;
             background:white;
             border:1px solid #ddd;
             color:#333;
+            padding:14px 18px;
+            border-radius:18px 18px 18px 4px;
+            max-width:75%;
         }
 
         .input-area{
             display:flex;
             padding:15px;
-            background:white;
             border-top:1px solid #ddd;
+            background:white;
         }
 
         #userInput{
             flex:1;
             padding:14px;
             border:1px solid #ccc;
-            border-radius:10px;
+            border-radius:12px;
             outline:none;
             font-size:16px;
         }
@@ -187,36 +166,28 @@
             margin-left:10px;
             padding:14px 22px;
             border:none;
-            border-radius:10px;
+            border-radius:12px;
             background:#0d6efd;
             color:white;
             font-size:16px;
             cursor:pointer;
-            transition:0.3s;
         }
 
         button:hover{
             background:#084298;
         }
 
-        /* MOBILE RESPONSIVE */
-
         @media(max-width:768px){
 
             .navbar{
                 flex-direction:column;
-                gap:15px;
+                gap:10px;
                 padding:15px;
-            }
-
-            .nav-links{
-                flex-wrap:wrap;
-                justify-content:center;
             }
 
             .chat-container{
                 width:95%;
-                margin-top:140px;
+                margin-top:120px;
             }
         }
 
@@ -232,17 +203,13 @@
 
         <div class="logo-section">
 
-            <div class="logo">
-                T
-            </div>
+            <div class="logo">T</div>
 
             <div class="brand-text">
 
                 <h1>TASKAI</h1>
 
-                <p>
-                    Smart AI Productivity Assistant
-                </p>
+                <p>Smart AI Productivity Assistant</p>
 
             </div>
 
@@ -262,7 +229,7 @@
 
     </div>
 
-    <!-- CHAT CONTAINER -->
+    <!-- CHAT -->
 
     <div class="chat-container">
 
@@ -270,9 +237,7 @@
 
             <h1>TASKAI Assistant</h1>
 
-            <p>
-                Your Smart AI Productivity Partner
-            </p>
+            <p>Your Smart AI Productivity Partner</p>
 
         </div>
 
@@ -280,7 +245,7 @@
 
             <div class="ai-message">
 
-            <b>AI:</b> ${data.reply}
+                <b>AI:</b> Hello! How can I assist you today?
 
             </div>
 
@@ -303,89 +268,32 @@
 
     </div>
 
-<script>
+    <script>
 
-async function sendMessage() {
+        async function sendMessage() {
 
-    const input = document.getElementById("userInput");
+            const input = document.getElementById("userInput");
 
-    const message = input.value.trim();
+            const message = input.value.trim();
 
-    if (message === "") return;
+            if(message === "") return;
 
-    const chatBox = document.getElementById("chatBox");
+            const chatBox = document.getElementById("chatBox");
 
-    // USER MESSAGE
-    chatBox.innerHTML += `
-        <div class="user-message">
-            <b>You:</b> ${message}
-        </div>
-    `;
+            // USER MESSAGE
+            const userDiv = document.createElement("div");
 
-    input.value = "";
+            userDiv.className = "user-message";
 
-    try {
+            userDiv.innerHTML = `<b>You:</b> ${message}`;
 
-        const response = await fetch("/ai", {
-
-            method: "POST",
-
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                message: message
-            })
-
-        });
-
-        const data = await response.json();
-
-        chatBox.innerHTML += `
-            <div class="ai-message">
-                <b>AI:</b> ${data.reply}
-            </div>
-        `;
-
-    } catch (error) {
-
-        console.log(error);
-
-        chatBox.innerHTML += `
-            <div class="ai-message" style="color:red;">
-                <b>Error:</b> Backend connection failed
-            </div>
-        `;
-    }
-
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-function handleKeyPress(event) {
-
-    if (event.key === "Enter") {
-
-        sendMessage();
-    }
-}
-
-</script>
-
-            // User Message
-
-            chatBox.innerHTML += `
-                <div class="user-message">
-                    <b>You:</b> ${message}
-                </div>
-            `;
+            chatBox.appendChild(userDiv);
 
             input.value = "";
 
             try {
 
-                const response = await fetch("/ai", 
-                     {
+                const response = await fetch("/ai", {
 
                     method: "POST",
 
@@ -401,21 +309,28 @@ function handleKeyPress(event) {
 
                 const data = await response.json();
 
-                // AI Response
+                // AI MESSAGE
+                const aiDiv = document.createElement("div");
 
-                chatBox.innerHTML += `
-                    <div class="ai-message">
-                        <b>AI:</b> ${data.response}
-                    </div>
-                `;
+                aiDiv.className = "ai-message";
+
+                aiDiv.innerHTML = `<b>AI:</b> ${data.reply}`;
+
+                chatBox.appendChild(aiDiv);
 
             } catch(error) {
 
-                chatBox.innerHTML += `
-                    <div class="ai-message" style="color:red;">
-                        <b>Error:</b> Unable to connect to AI backend
-                    </div>
+                const errorDiv = document.createElement("div");
+
+                errorDiv.className = "ai-message";
+
+                errorDiv.style.color = "red";
+
+                errorDiv.innerHTML = `
+                    <b>Error:</b> Unable to connect to AI backend
                 `;
+
+                chatBox.appendChild(errorDiv);
             }
 
             chatBox.scrollTop = chatBox.scrollHeight;
