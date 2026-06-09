@@ -1,6 +1,10 @@
+
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 import os
+
+# IMPORT AI ROUTE
+from router.ai import ai_bp
 
 app = Flask(
     __name__,
@@ -9,6 +13,9 @@ app = Flask(
 )
 
 CORS(app)
+
+# REGISTER AI BLUEPRINT
+app.register_blueprint(ai_bp)
 
 @app.route("/")
 def home():
